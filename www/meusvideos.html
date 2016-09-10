@@ -48,35 +48,57 @@
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/openfb.js"></script>
-    <script type="text/javascript">
-
-      (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js";
-        fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
-      
-    </script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/openfb.js"></script>
+    <script type="text/javascript" src="js/fb.js"></script>
+
     <title>UniClass</title>
 </head>
 
 <body ng-app="myApp" ng-controller="myCtrl">
     
+
     <menu></menu>
-
-    <div ng-init="listarTemas()" class="text-center carregando" ng-show="carregando" >
-       <i class="fa fa-spinner fa-spin"></i> Carregando...
-    </div>
     
-   <temas ng-show="temas"></temas>
- 
-   <conteudo ng-show="conteudo"></conteudo>
+    <adicionar></adicionar>
 
-   <login ng-show="login"></login>
+
+    <div class="main-meus-videos container" style="margin-top:30px;" ng-init="carregarMeusVideos()" ng-show="!formulario" >
+
+
+          <h5>
+            <i class="fa fa-plus-square-o fa-2x" aria-hidden="true" ng-click="adicionarNovo()"></i> Adicionar vídeo
+          </h5>
+          <hr/>
+
+        <div class="row lista" ng-repeat="(key, value) in meusVideos" >
+            
+               <div class="row" >
+                
+                    <div class="col-xs-4">
+                        <img width="100" src="img/professor.png" alt="persona">
+                    </div>
+                    <div class="col-xs-8">
+                        <h5><strong>{{value.titulo}}</strong></h5>
+                        <small>{{value.descricao}}</small>
+                    </div>
+                            
+                </div>
+
+                <div class="row totalizacao text-center">
+            
+                    Visualizações: <span class="badge badge-primary">{{value.visualizacoes}}</span>
+                    Comentários: <span class="badge badge-primary">{{value.visualizacoes}}</span>
+                    
+                </div>
+                
+            
+        </div>
+
+
+       
+    </div>    
+
     
 </body>
 

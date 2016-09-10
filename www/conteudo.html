@@ -1,0 +1,46 @@
+<div class="container">
+
+
+    <div class="main-lista-conteudo" style="margin-top:10px;" ng-repeat="(key, value) in listaConteudo" >
+        <div class="row" >
+                
+                <div class="col-xs-4">
+                    <img width="100" src="img/professor.png" alt="persona">
+                </div>
+                <div class="col-xs-8">
+                    <h5><strong>{{value.titulo}}</strong></h5>
+                    <small>{{value.descricao}}</small>
+                </div>
+                
+            
+        </div>
+
+        <div class="row video ">
+
+                    
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="video-frame" width="300" height="150" src="https://www.youtube.com/embed/eaAAvCAeewQ" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                   
+        </div>
+
+        <div class="row classificacao">
+            
+                Classificação: <i class="fa fa-star" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i> 
+             
+        </div>
+
+        <div class="row" class="comentarios text-center">
+
+            <div ng-repeat="(key, valueC) in value.comentarios">
+                <div class="col-xs-2 col-xs-offset-1">
+                    <img src="img/professor.png">
+                </div>
+                <div class="col-xs-9" >
+                    {{valueC.comentario}}
+                </div>
+            </div>
+
+        </div>
+    <div>    
+</div>

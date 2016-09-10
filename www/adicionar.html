@@ -1,0 +1,48 @@
+ <div class="main-carregar-form container" style="margin-top:30px;" ng-show="formulario" >
+
+	<form class="form-horizontal">
+	  <div class="form-group">
+	    <label class="control-label col-xs-4 text-right" for="text">Titulo:</label>
+	    <div class="col-xs-8">
+	      <input type="text" class="form-control" id="text" placeholder="" ng-model="objForm.titulo">
+	    </div>
+	  </div>
+	 
+	 <div class="form-group">
+	    <label class="control-label col-xs-4 text-right" for="text">Categorias:</label>
+	    <div class="col-xs-8">
+
+		    <select 
+		    	class="form-control"
+		    	ng-model="objForm.categoria_id"
+		    	ng-options="item.tema_id as item.descricao for item in listaTodoTema track by item.tema_id">
+		    		
+		    	</select>
+
+	    </div>
+	  </div>
+
+
+	  <div class="form-group">
+	    <label class="control-label col-xs-4 text-right" for="text">Tags:</label>
+	    <div class="col-xs-8">
+	      <input type="text" class="form-control" id="text" placeholder="" ng-model="objForm.tag">
+	    </div>
+	  </div>
+
+	   <div class="form-group">
+	    <label class="control-label col-xs-4 text-right" for="text">Link:</label>
+	    <div class="col-xs-8">
+	      <input type="text" class="form-control" id="text" placeholder="" ng-model="objForm.link">
+	    </div>
+	  </div>
+	  
+	  <div class="form-group"> 
+	    <div class="col-xs-offset-4 col-xs-8">
+	      <button type="button" class="btn btn-primary" ng-click="salvarNovoVideo()"><i class="fa fa-check-circle-o fa-2x" aria-hidden="true"></i></button>
+	      <button type="button" class="btn btn-default" ng-click="voltarMeusVideos()"><i class="fa fa-ban fa-2x" aria-hidden="true"></i></button>
+	    </div>
+	  </div>
+	</form>
+
+ </div>

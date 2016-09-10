@@ -1,0 +1,21 @@
+<div class="text-center" style="margin:50px">
+	<img src="img/categoria.png" width="100" class="img img-circle"><br/>
+	<strong>Categorias</strong>
+</div>
+
+<div class="main-lista-tema">
+
+
+
+
+        <div class="row lista" ng-repeat="(key, value) in listaTema" ng-click="carregarConteudo(value.id)">
+            
+                
+                <div class="col-xs-6 col-xs-offset-3 tema label label-warning">
+                
+                    {{value.descricao}}
+                    
+                </div>
+            
+        </div>
+    <div>    
